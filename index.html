@@ -904,8 +904,7 @@
         const volumeIcon = document.getElementById("volumeIcon");
 
         window.addEventListener("load", function () {
-            audio.muted = false; // Bật tiếng lại (có thể bị chặn trên một số trình duyệt)
-            audio.autoplay = true;
+            audio.play()
         });
 
         let isDraggingProgress = false;
