@@ -16,7 +16,7 @@
     <!-- Open Graph (Facebook, Discord, Zalo, ...) -->
     <meta property="og:title" content="Nguyễn Tấn Lợi">
     <meta property="og:description" content="Nhấp vào đường link để xem chi tiết!">
-    <meta property="og:image" content="https://github.com/IshiiAinari/profile/blob/main/source/banner.gif">
+    <meta property="og:image" content="https://github.com/IshiiAinari/profile/blob/main/source/banner.png">
     <meta property="og:url" content="https://ishiiainari.github.io/profile/">
     <meta property="og:type" content="website">
 
@@ -906,11 +906,11 @@
         let hasPlayed = false;
         let isDraggingProgress = false;
 
-        document.addEventListener("click", function playMusicOnce() {
+        document.addEventListener("pointermove", function playMusicOnce() {
             if (!hasPlayed) {
                 hasPlayed = true;
                 audio.play();
-                document.removeEventListener("click", playMusicOnce);
+                document.removeEventListener("pointermove", playMusicOnce);
             }
         });
 
