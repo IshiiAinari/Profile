@@ -805,7 +805,7 @@
                 </div>
             </div>
         </div>
-        <audio autoplay id="audioPlayer" src="https://github.com/IshiiAinari/profile/blob/main/source/music.mp3?raw=True"></audio>
+        <audio id="audioPlayer" src="https://github.com/IshiiAinari/profile/blob/main/source/music.mp3?raw=True"></audio>
     </div>
 
     <script>
@@ -903,8 +903,10 @@
         const volumeDot = document.getElementById("volumeDot");
         const volumeIcon = document.getElementById("volumeIcon");
 
-        window.addEventListener("load", function () {
-            audio.play()
+        document.addEventListener("pointermove", function playMusicOnce() {
+            audio.play();
+            hasPlayed = true;
+            document.removeEventListener("pointermove", playMusicOnce);
         });
 
         let isDraggingProgress = false;
