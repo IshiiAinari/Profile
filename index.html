@@ -4,8 +4,27 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nguyễn Tấn Lợi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <title>Nguyễn Tấn Lợi</title>
+
+    <!-- Tìm kiếm -->
+    <meta name="description" content="Nhấp vào đường link để xem chi tiết!">
+    <meta name="author" content="Nguyễn Tấn Lợi">
+    <meta name="keywords" content="Nguyễn Tấn Lợi, gn027c, trang cá nhân, profile, bio, ishisi ainari, ishii ainari">
+
+    <!-- Open Graph (Facebook, Discord, Zalo, ...) -->
+    <meta property="og:title" content="Nguyễn Tấn Lợi">
+    <meta property="og:description" content="Nhấp vào đường link để xem chi tiết!">
+    <meta property="og:image" content="https://github.com/IshiiAinari/profile/blob/main/source/banner.gif">
+    <meta property="og:url" content="https://ishiiainari.github.io/profile/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card (X) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nguyễn Tấn Lợi">
+    <meta name="twitter:description" content="Nhấp vào đường link để xem chi tiết!">
+    <meta name="twitter:image" content="https://yourwebsite.com/thumbnail.jpg">
+
     <style>
         /* ---------------------- SETTING ---------------------- */
         /* Ẩn thanh cuộn trên Chrome, Edge, Safari */
@@ -22,24 +41,29 @@
         }
 
         /* ---------------------- TAILWAR ---------------------- */
-         /* Ngăn chọn văn bản */
+        /* Ngăn chọn văn bản */
         .no-select {
             user-select: none;
-            pointer-events: none; 
-            -webkit-user-select: none; /* Hỗ trợ IE, Edge */
-            -moz-user-select: none; /* Hỗ trợ Chrome, Safari */
-            -ms-user-select: none; /* Hỗ trợ Firefox */
+            pointer-events: none;
+            -webkit-user-select: none;
+            /* Hỗ trợ IE, Edge */
+            -moz-user-select: none;
+            /* Hỗ trợ Chrome, Safari */
+            -ms-user-select: none;
+            /* Hỗ trợ Firefox */
         }
+
         .seperate {
             display: block;
-    height: 2px;
-    width: 80%;
-    margin: 20px auto;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
-    border-radius: 5px;
-    margin: 20px auto; /* Canh giữa */
+            height: 2px;
+            width: 80%;
+            margin: 20px auto;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+            border-radius: 5px;
+            margin: 20px auto;
+            /* Canh giữa */
 
-}
+        }
 
         /* ---------------------- WEBSITE ---------------------- */
         html {
@@ -60,142 +84,142 @@
 
         /* ---------------------- BACKGROUND ---------------------- */
         .context {
-    width: 100%;
-    position: absolute;
-    top:50vh;
-    z-index: -1;
-}
+            width: 100%;
+            position: absolute;
+            top: 50vh;
+            z-index: -1;
+        }
 
-.context h1{
-    text-align: center;
-    color: #fff;
-    font-size: 50px;
-}
-
-
-.area{
-    background: radial-gradient(ellipse at bottom, #223340 0%, #161644 100%);
-    background: -webkit-radial-gradient(ellipse at bottom, #471584 0%, #610c41 100%);
-    width: 100%;
-    height:100%;
-    position: fixed;
-   overflow: hidden;
-}
-
-.circles{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.circles li{
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    animation: animate 25s linear infinite;
-    bottom: -150px;
-    
-}
-
-.circles li:nth-child(1){
-    left: 25%;
-    width: 80px;
-    height: 80px;
-    animation-delay: 0s;
-}
+        .context h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 50px;
+        }
 
 
-.circles li:nth-child(2){
-    left: 10%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 2s;
-    animation-duration: 12s;
-}
+        .area {
+            background: radial-gradient(ellipse at bottom, #223340 0%, #161644 100%);
+            background: -webkit-radial-gradient(ellipse at bottom, #471584 0%, #610c41 100%);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            overflow: hidden;
+        }
 
-.circles li:nth-child(3){
-    left: 70%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 4s;
-}
+        .circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
 
-.circles li:nth-child(4){
-    left: 40%;
-    width: 60px;
-    height: 60px;
-    animation-delay: 0s;
-    animation-duration: 18s;
-}
+        .circles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
 
-.circles li:nth-child(5){
-    left: 65%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 0s;
-}
+        }
 
-.circles li:nth-child(6){
-    left: 75%;
-    width: 110px;
-    height: 110px;
-    animation-delay: 3s;
-}
-
-.circles li:nth-child(7){
-    left: 35%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 7s;
-}
-
-.circles li:nth-child(8){
-    left: 50%;
-    width: 25px;
-    height: 25px;
-    animation-delay: 15s;
-    animation-duration: 45s;
-}
-
-.circles li:nth-child(9){
-    left: 20%;
-    width: 15px;
-    height: 15px;
-    animation-delay: 2s;
-    animation-duration: 35s;
-}
-
-.circles li:nth-child(10){
-    left: 85%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-}
+        .circles li:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
 
 
+        .circles li:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
 
-@keyframes animate {
+        .circles li:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
 
-    0%{
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0;
-    }
+        .circles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
 
-    100%{
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-    }
+        .circles li:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
 
-}
+        .circles li:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+
+        .circles li:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+
+        .circles li:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+
+        .circles li:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+
+        .circles li:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+
+
+
+        @keyframes animate {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+
+        }
 
 
         /* ---------------------- PROFILE ---------------------- */
@@ -206,7 +230,7 @@
             padding: 0;
         }
 
-        
+
 
         /* Màn hình chờ */
         .loading-screen {
@@ -243,35 +267,37 @@
 
         /* Profile Card */
         @keyframes glowing-border {
-    0% {
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 
-                    0 0 10px rgba(255, 255, 255, 0.2), 
+            0% {
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
+                    0 0 10px rgba(255, 255, 255, 0.2),
                     0 0 15px rgba(255, 255, 255, 0.1);
-    }
-    50% {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 
-                    0 0 15px rgba(255, 255, 255, 0.4), 
-                    0 0 20px rgba(255, 255, 255, 0.3);
-    }
-    100% {
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 
-                    0 0 10px rgba(255, 255, 255, 0.2), 
-                    0 0 15px rgba(255, 255, 255, 0.1);
-    }
-}
+            }
 
-.profile-card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    border-radius: 1.5rem;
-    padding: 2rem;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    overflow: hidden;
-    
-    /* Hiệu ứng viền phát sáng */
-    animation: glowing-border 4s infinite alternate;
-}
+            50% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                    0 0 15px rgba(255, 255, 255, 0.4),
+                    0 0 20px rgba(255, 255, 255, 0.3);
+            }
+
+            100% {
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
+                    0 0 10px rgba(255, 255, 255, 0.2),
+                    0 0 15px rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+
+            /* Hiệu ứng viền phát sáng */
+            animation: glowing-border 4s infinite alternate;
+        }
 
 
         .banner-wrapper {
@@ -687,18 +713,18 @@
     </div>
 
     <!-- Background -->
-    <div class="area" >
+    <div class="area">
         <ul class="circles">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
         </ul>
     </div>
     <!-- WEBSITE -->
@@ -782,10 +808,35 @@
                 </div>
             </div>
         </div>
-        <audio autoplay id="audioPlayer" src="./source/music.mp3"></audio>
+        <audio autoplay muted id="audioPlayer" src="./source/music.mp3"></audio>
     </div>
 
     <script>
+        // ---------------------- ANTICRAWL ----------------------
+        // Chặn F12, Ctrl + U, Ctrl + Shift + I
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "F12" ||
+                (event.ctrlKey && event.shiftKey && event.key === "I") ||
+                (event.ctrlKey && event.key === "u")) {
+                event.preventDefault();
+            }
+        });
+
+        // Chặn chuột phải
+        document.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+        });
+
+        // Mã hóa HTML bằng Base64
+        const encodedHTML = "PGRpdiBjbGFzcz0nY29udGFpbmVyJz48aDE+SGVsbG8gdGhpcyBpcyBhIHByb3RlY3RlZCBwYWdlPC9oMT48L2Rpdj4=";
+        window.onload = function () {
+            document.body.innerHTML = atob(encodedHTML);
+        };
+        // Chặn agent giả
+        if (navigator.userAgent.includes("python") || navigator.userAgent.includes("bot")) {
+            window.location.href = "https://yourwebsite.com/blocked.html";
+        }
+
         // ---------------------- LOADING ----------------------
         window.addEventListener("load", () => {
             document.querySelector(".loading-screen").classList.add("fade-out");
@@ -843,6 +894,8 @@
         };
 
         // ---------------------- MUSIC ----------------------
+        
+
         const audio = document.getElementById("audioPlayer");
         const progressBar = document.getElementById("progressBar");
         const progress = document.getElementById("progress");
@@ -853,6 +906,10 @@
         const volumeProgress = document.getElementById("volumeProgress");
         const volumeDot = document.getElementById("volumeDot");
         const volumeIcon = document.getElementById("volumeIcon");
+
+        window.addEventListener("load", function () {
+            audio.muted = false; // Bật tiếng lại (có thể bị chặn trên một số trình duyệt)
+        });
 
         let isDraggingProgress = false;
 
@@ -930,7 +987,6 @@
         });
 
         // ---------------------- VOLUME ----------------------
-
         // Hàm tính toán vị trí khi kéo volume
         function updateVolume(event) {
             const rect = volumeBar.getBoundingClientRect();
