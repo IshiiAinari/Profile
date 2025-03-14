@@ -12,7 +12,7 @@
     <meta name="author" content="Nguyễn Tấn Lợi">
     <meta name="keywords" content="Nguyễn Tấn Lợi, gn027c, trang cá nhân, profile, bio, ishisi ainari, ishii ainari">
     <meta name="theme-color" content="#4324b3">
-    
+
     <!-- Open Graph (Facebook, Discord, Zalo, ...) -->
     <meta property="og:title" content="Nguyễn Tấn Lợi">
     <meta property="og:description" content="Nhấp vào đường link để xem chi tiết!">
@@ -231,8 +231,6 @@
             padding: 0;
         }
 
-
-
         /* Màn hình chờ */
         .loading-screen {
             position: fixed;
@@ -255,8 +253,8 @@
         .fade-out {
             opacity: 0;
             visibility: hidden;
+            transition-delay: 2s;
         }
-
 
         /* Nội dung website */
         .container {
@@ -709,9 +707,7 @@
 
 <body>
     <!-- Màn hình chờ -->
-    <div class="loading-screen">
-        Welcome to Basic Profile
-    </div>
+    <div class="loading-screen typewrite" data-period="3000" data-type='["Enjoy!"]'></div>
 
     <!-- Background -->
     <div class="area">
@@ -809,7 +805,7 @@
                 </div>
             </div>
         </div>
-        <audio autoplay muted id="audioPlayer" src="./source/music.mp3"></audio>
+        <audio id="audioPlayer" src="./source/music.mp3"></audio>
     </div>
 
     <script>
@@ -833,6 +829,7 @@
         window.onload = function () {
             document.body.innerHTML = atob(encodedHTML);
         };
+
         // Chặn agent giả
         if (navigator.userAgent.includes("python") || navigator.userAgent.includes("bot")) {
             window.location.href = "https://yourwebsite.com/blocked.html";
@@ -841,7 +838,7 @@
         // ---------------------- LOADING ----------------------
         window.addEventListener("load", () => {
             document.querySelector(".loading-screen").classList.add("fade-out");
-        });
+        }, 3000);
 
 
         // ---------------------- TYPING ----------------------
@@ -895,8 +892,6 @@
         };
 
         // ---------------------- MUSIC ----------------------
-        
-
         const audio = document.getElementById("audioPlayer");
         const progressBar = document.getElementById("progressBar");
         const progress = document.getElementById("progress");
@@ -910,6 +905,7 @@
 
         window.addEventListener("load", function () {
             audio.muted = false; // Bật tiếng lại (có thể bị chặn trên một số trình duyệt)
+            audio.autoplay = true;
         });
 
         let isDraggingProgress = false;
