@@ -906,11 +906,11 @@
         let hasPlayed = false;
         let isDraggingProgress = false;
 
-        document.addEventListener("pointermove", function playMusicOnce() {
+        document.addEventListener("click", function playMusicOnce() {
             if (!hasPlayed) {
                 hasPlayed = true;
                 audio.play();
-                document.removeEventListener("pointermove", playMusicOnce);
+                document.removeEventListener("click", playMusicOnce);
             }
         });
 
