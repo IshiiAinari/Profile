@@ -903,13 +903,16 @@
         const volumeDot = document.getElementById("volumeDot");
         const volumeIcon = document.getElementById("volumeIcon");
 
-        document.addEventListener("pointermove", function playMusicOnce() {
-            audio.play();
-            hasPlayed = true;
-            document.removeEventListener("pointermove", playMusicOnce);
-        });
-
+        let hasPlayed = false;
         let isDraggingProgress = false;
+
+        document.addEventListener("pointermove", function playMusicOnce() {
+            if (!hasPlayed) {
+                hasPlayed = true;
+                audio.play();
+                document.removeEventListener("pointermove", playMusicOnce);
+            }
+        });
 
         function togglePlay() {
             if (audio.paused) {
