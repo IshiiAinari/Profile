@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="vn">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nguyễn Tấn Lợi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <style>
+        /* ---------------------- SETTING ---------------------- */
+        /* Ẩn thanh cuộn trên Chrome, Edge, Safari */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            -ms-overflow-style: none;
+        }
+
+        /* ---------------------- TAILWAR ---------------------- */
+         /* Ngăn chọn văn bản */
+        .no-select {
+            user-select: none;
+            pointer-events: none; 
+            -webkit-user-select: none; /* Hỗ trợ IE, Edge */
+            -moz-user-select: none; /* Hỗ trợ Chrome, Safari */
+            -ms-user-select: none; /* Hỗ trợ Firefox */
+        }
+        .seperate {
+            display: block;
+    height: 2px;
+    width: 80%;
+    margin: 20px auto;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    border-radius: 5px;
+    margin: 20px auto; /* Canh giữa */
+
+}
+
+        /* ---------------------- WEBSITE ---------------------- */
+        html {
+            line-height: 1.5;
+            scrollbar-width: none;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            color: white;
+            padding-bottom: 100px;
+        }
+
+        /* ---------------------- BACKGROUND ---------------------- */
+        .context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+    z-index: -1;
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area{
+    background: radial-gradient(ellipse at bottom, #223340 0%, #161644 100%);
+    background: -webkit-radial-gradient(ellipse at bottom, #471584 0%, #610c41 100%);
+    width: 100%;
+    height:100%;
+    position: fixed;
+   overflow: hidden;
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+
+        /* ---------------------- PROFILE ---------------------- */
+        /* Đặt giá trị mặc định */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        
+
+        /* Màn hình chờ */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-family: Arial, sans-serif;
+            z-index: 9999;
+            transition: opacity 1s ease, visibility 1s;
+        }
+
+        /* Khi fade out */
+        .fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+
+        /* Nội dung website */
+        .container {
+            max-width: 28rem;
+            width: 100%;
+            padding: 1rem;
+            margin-top: 120px;
+        }
+
+        /* Profile Card */
+        @keyframes glowing-border {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 
+                    0 0 10px rgba(255, 255, 255, 0.2), 
+                    0 0 15px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 
+                    0 0 15px rgba(255, 255, 255, 0.4), 
+                    0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 
+                    0 0 10px rgba(255, 255, 255, 0.2), 
+                    0 0 15px rgba(255, 255, 255, 0.1);
+    }
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    
+    /* Hiệu ứng viền phát sáng */
+    animation: glowing-border 4s infinite alternate;
+}
+
+
+        .banner-wrapper {
+            position: absolute;
+            inset: 0;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .banner {
+            width: 100%;
+            min-height: 120px;
+            max-height: 150px;
+            object-fit: cover;
+            filter: brightness(0.6);
+        }
+
+        .avatar-wrapper {
+            position: relative;
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            object-fit: cover;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05);
+        }
+
+        header h1 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            text-align: center;
+            margin-bottom: 1.5rem;
+
+        }
+
+        .typewrite>.wrap {
+            border-right: 1.5px solid rgba(196, 196, 196, 0.2);
+            animation: blinkCursor 1.2s infinite;
+        }
+
+        @keyframes blinkCursor {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .sub-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            animation: blinkCursor 0.8s infinite;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        /* Discord Card */
+        .discord-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            margin: 1.5rem 0;
+            min-height: 60px;
+            /* Đảm bảo không quá nhỏ */
+            box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.2);
+        }
+
+        .discord-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .discord-avatar {
+            width: auto;
+            height: 100%;
+            max-height: 80px;
+            /* Giới hạn tối đa */
+            border-radius: 30%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .discord-card div {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .discord-name {
+            font-size: 1rem;
+            font-weight: bold;
+            white-space: normal;
+            word-break: break-word;
+            /* Cho phép xuống dòng */
+        }
+
+        /* Social Grid */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            width: 100%;
+            color: white;
+            text-decoration: none;
+            justify-content: flex-start;
+            /* Đảm bảo icon vẫn ở bên trái */
+            overflow: hidden;
+        }
+
+        .social-link:hover {
+            transform: scale(1.05);
+        }
+
+        .social-link span {
+            flex: 1;
+            /* Để chữ tự mở rộng */
+            text-align: center;
+            /* Căn giữa chữ */
+        }
+
+        .social-link i {
+            font-size: 1.2rem;
+        }
+
+        .discord {
+            background: linear-gradient(135deg, #343bb7, #3d1ca254);
+        }
+
+        .facebook {
+            background: linear-gradient(135deg, #4772c9, #1b88bba0);
+        }
+
+        .youtube {
+            background: linear-gradient(135deg, #d43434, #d01d14a0);
+        }
+
+        .github {
+            background: linear-gradient(135deg, #454a56, #57657da0);
+        }
+
+        /* Payment Button */
+        .payment-button {
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #ce5489, #9e2fd2);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .payment-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        /* Music Controller (Xoay đĩa) */
+        .music-toggle {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .music-toggle:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .progress-container,
+        .volume-container {
+            position: absolute;
+            left: 60px;
+            bottom: 5%;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 6px 15px 5px 15px;
+            border-radius: 8px;
+            cursor: default;
+        }
+
+        .volume-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .music-toggle:hover .progress-container {
+            opacity: 1;
+            transform: translateX(0);
+            transform: translateY(-2rem);
+        }
+
+        .music-toggle:hover .volume-container {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .music-toggle:not(:hover) .progress-container,
+        .music-toggle:not(:hover) .volume-container {
+            transition-delay: 2s;
+            /* Chỉ có tác dụng nếu có transition hoạt động */
+        }
+
+        .progress-bar,
+        .volume-bar {
+            width: 120px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-bar {
+            margin: .5 rem .3rem .1rem .4rem;
+        }
+
+        .fas {
+            font-size: .8rem;
+            transform: translateY(.08rem);
+            width: 12px;
+        }
+
+        .volume-bar {
+            margin: auto;
+            margin-left: .9rem;
+        }
+
+        .progress,
+        .volume-progress {
+            width: 0%;
+            height: 100%;
+            background: white;
+            border-radius: 3px;
+            transition: width 0.1s linear;
+        }
+
+        .progress-dot,
+        .volume-dot {
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            left: 0%;
+            transition: left 0.1s linear;
+        }
+
+        .time-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 14px;
+            color: white;
+            padding-top: 5px;
+            white-space: nowrap;
+        }
+
+        /* Popup Styles (Thông tin thanh toán) */
+        /* Popup Overlay */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            /* transform: scale(0.9); */
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            cursor: pointer;
+        }
+
+        /* Khi hiển thị popup */
+        .popup-overlay.show {
+            opacity: 1;
+            /* transform: scale(1); */
+        }
+
+        /* Khi ẩn popup */
+        .popup-overlay.hide {
+            opacity: 0;
+            /* transform: scale(0.9); */
+        }
+
+        /* Popup Content */
+        .popup-content {
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            transition: transform 0.4s ease;
+            width: 500px;
+            cursor: default;
+        }
+
+        /* Khi mở popup */
+        .popup-overlay.show .popup-content {
+            transform: translateY(0);
+            background-color: rgba(105, 105, 105, 0.1);
+            backdrop-filter: blur(30px);
+            max-width: 90%;
+        }
+
+        /* Khi ẩn popup */
+        .popup-overlay.hide .popup-content {
+            transform: translateY(-20px);
+        }
+
+        .close-popup {
+            position: relative;
+            background-color: transparent;
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+            width: fit-content;
+            transform: translateY(-10px);
+            font-size: 16px;
+        }
+
+        .close-popup:hover {
+            transform: scale(1.05);
+            transform: translateY(-10px);
+        }
+
+        .popup-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+
+        .payment-option {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 1rem;
+            background: #4378d5;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .payment-option:hover {
+            transform: scale(1.1);
+        }
+
+        .qr-code {
+            background-color: rgba(255, 255, 255, 1);
+            padding: 20px;
+            margin: 20px;
+            height: 70%;
+            width: 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Màn hình chờ -->
+    <div class="loading-screen">
+        Welcome to Basic Profile
+    </div>
+
+    <!-- Background -->
+    <div class="area" >
+        <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </ul>
+    </div>
+    <!-- WEBSITE -->
+    <div class="container">
+        <!-- Profile -->
+        <div class="profile-card">
+            <!-- Avatar, Banner, Name -->
+            <header>
+                <div class="banner-wrapper no-select">
+                    <img src="./source/banner.gif" alt="Banner" class="banner" />
+                </div>
+                <div class="avatar-wrapper no-select">
+                    <img src="./source/avatar.jpg" alt="Avatar" class="avatar" />
+                </div>
+                <h1>Nguyễn Tấn Lợi</h1>
+                <p class="sub-text typewrite no-select" data-period="3000"
+                    data-type='["Dễ gần nhưng không dễ đổ", "#Coder #Student #Sleep #Gamer", "Xin chào!"]'>
+                    <span class="wrap"></span>
+                </p>
+            </header>
+
+            <!-- Discord Server -->
+            <div class="discord-card">
+                <img src="https://cdn.discordapp.com/icons/914870154079391746/avatar.png" alt="Discord"
+                    class="discord-avatar no-select" />
+                <div>
+                    <p class="discord-name no-select">Loading...</p>
+                    <p class="discord-invite discord-invite-click sub-text">discord.gg/...</p>
+                </div>
+            </div>
+
+            <!-- Social -->
+            <div class="social-grid">
+                <a href="https://discord.com/users/914870154079391746" class="social-link discord">
+                    <i class="fab fa-discord"></i>
+                    <span class="no-select">Discord</span>
+                </a>
+                <a href="https://facebook.com/gn027c" class="social-link facebook">
+                    <i class="fab fa-facebook"></i>
+                    <span class="no-select">Facebook</span>
+                </a>
+                <a href="https://youtube.com/@ainariishii" class="social-link youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span class="no-select">YouTube</span>
+                </a>
+                <a href="https://github.com/IshiiAinari" class="social-link github">
+                    <i class="fab fa-github"></i>
+                    <span class="no-select">GitHub</span>
+                </a>
+            </div>
+
+            <div class="seperate"></div>
+            <!-- Payment -->
+            <button class="payment-button show-payment-info">
+                <span>Thông tin thanh toán</span>
+                <i class="fas fa-wallet"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Music -->
+    <div class="music-toggle" onclick="togglePlay()">
+        <i class="fas fa-music"></i>
+        <div class="progress-container" onclick="event.stopPropagation()">
+            <div class="title-album no-select">Thư ơi!</div>
+            <div class="progress-bar" id="progressBar">
+                <div class="progress" id="progress">
+                    <div class="progress-dot" id="progressDot"></div>
+                </div>
+            </div>
+            <div class="time-container no-select">
+                <span id="currentTime">0:00</span>
+                <span id="totalDuration">0:00</span>
+            </div>
+        </div>
+        <div class="volume-container" onclick="event.stopPropagation()">
+            <i class="fas fa-volume-up" id="volumeIcon"></i>
+            <div class="volume-bar" id="volumeBar">
+                <div class="volume-progress" id="volumeProgress">
+                    <div class="volume-dot" id="volumeDot"></div>
+                </div>
+            </div>
+        </div>
+        <audio autoplay id="audioPlayer" src="./source/music.mp3"></audio>
+    </div>
+
+    <script>
+        // ---------------------- LOADING ----------------------
+        window.addEventListener("load", () => {
+            document.querySelector(".loading-screen").classList.add("fade-out");
+        });
+
+
+        // ---------------------- TYPING ----------------------
+        class TxtType {
+            constructor(el, toRotate, period) {
+                this.toRotate = toRotate;
+                this.el = el;
+                this.loopNum = 0;
+                this.period = parseInt(period, 10) || 2000;
+                this.txt = '';
+                this.isDeleting = false;
+                this.tick();
+            }
+
+            tick() {
+                let i = this.loopNum % this.toRotate.length;
+                let fullTxt = this.toRotate[i];
+
+                if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+
+                this.el.innerHTML = `<span class="wrap">${this.txt}</span>`;
+
+                // Điều chỉnh tốc độ gõ/xóa mượt hơn
+                let delta = this.isDeleting ? 200 + Math.random() * 50 : 150 + Math.random() * 50;
+
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    delta = this.period; // Dừng 2s sau khi gõ xong
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.loopNum++;
+                    delta = 800; // Dừng 0.8s trước khi gõ lại
+                }
+
+                setTimeout(() => this.tick(), delta);
+            }
+        }
+
+        window.onload = function () {
+            document.querySelectorAll('.typewrite').forEach(element => {
+                let toRotate = element.getAttribute('data-type');
+                let period = element.getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(element, JSON.parse(toRotate), period);
+                }
+            });
+        };
+
+        // ---------------------- MUSIC ----------------------
+        const audio = document.getElementById("audioPlayer");
+        const progressBar = document.getElementById("progressBar");
+        const progress = document.getElementById("progress");
+        const progressDot = document.getElementById("progressDot");
+        const currentTimeEl = document.getElementById("currentTime");
+        const totalDurationEl = document.getElementById("totalDuration");
+        const volumeBar = document.getElementById("volumeBar");
+        const volumeProgress = document.getElementById("volumeProgress");
+        const volumeDot = document.getElementById("volumeDot");
+        const volumeIcon = document.getElementById("volumeIcon");
+
+        let isDraggingProgress = false;
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+
+        // Định dạng thời gian (mm:ss)
+        function formatTime(seconds) {
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60);
+            return `${min}:${sec < 10 ? "0" : ""}${sec}`;
+        }
+
+        // Cập nhật tổng thời lượng bài hát
+        audio.addEventListener("loadedmetadata", () => {
+            totalDurationEl.textContent = formatTime(audio.duration);
+        });
+
+        // Cập nhật tiến trình khi nhạc chạy
+        audio.addEventListener("timeupdate", () => {
+            if (!isDraggingProgress) {
+                const progressPercent = (audio.currentTime / audio.duration) * 100;
+                progress.style.width = `${progressPercent}%`;
+                progressDot.style.left = `${progressPercent}%`;
+                currentTimeEl.textContent = formatTime(audio.currentTime);
+            }
+        });
+
+        // Hàm tính toán vị trí khi kéo
+        function updateSeek(event) {
+            const rect = progressBar.getBoundingClientRect();
+            let offsetX = event.clientX - rect.left;
+            offsetX = Math.max(0, Math.min(offsetX, rect.width)); // Giới hạn trong thanh progress
+
+            const seekTime = (offsetX / rect.width) * audio.duration;
+            audio.currentTime = seekTime;
+
+            const progressPercent = (seekTime / audio.duration) * 100;
+            progress.style.width = `${progressPercent}%`;
+            progressDot.style.left = `${progressPercent}%`;
+
+            // Cập nhật current time ngay cả khi đang kéo
+            currentTimeEl.textContent = formatTime(seekTime);
+        }
+
+        // Khi hover vào progress bar mới cho phép kéo
+        progressBar.addEventListener("mouseenter", () => {
+            document.addEventListener("pointermove", handleDrag);
+        });
+        progressBar.addEventListener("mouseleave", () => {
+            document.removeEventListener("pointermove", handleDrag);
+        });
+
+        // Khi bắt đầu kéo progress
+        progressBar.addEventListener("pointerdown", (event) => {
+            isDraggingProgress = true;
+            updateSeek(event);
+        });
+
+        // Khi đang kéo progress (chỉ khi hover)
+        function handleDrag(event) {
+            if (isDraggingProgress) {
+                updateSeek(event);
+            }
+        }
+
+        // Khi thả chuột
+        document.addEventListener("pointerup", () => {
+            isDraggingProgress = false;
+        });
+
+        // ---------------------- VOLUME ----------------------
+
+        // Hàm tính toán vị trí khi kéo volume
+        function updateVolume(event) {
+            const rect = volumeBar.getBoundingClientRect();
+            let offsetX = event.clientX - rect.left;
+            offsetX = Math.max(0, Math.min(offsetX, rect.width)); // Giới hạn trong thanh volume
+
+            const volume = offsetX / rect.width;
+            audio.volume = volume;
+
+            volumeProgress.style.width = `${volume * 100}%`;
+            volumeDot.style.left = `${volume * 100}%`;
+
+            volumeIcon.className =
+                volume === 0 ? "fas fa-volume-mute" : volume < 0.5 ? "fas fa-volume-down" : "fas fa-volume-up";
+        }
+
+        // Khi bắt đầu kéo volume
+        volumeBar.addEventListener("pointerdown", (event) => {
+            isDraggingVolume = true;
+            updateVolume(event);
+        });
+
+        // Khi đang kéo volume
+        document.addEventListener("pointermove", (event) => {
+            if (isDraggingVolume) {
+                updateVolume(event);
+            }
+        });
+
+        // Khi thả chuột
+        document.addEventListener("pointerup", () => {
+            isDraggingVolume = false;
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            audio.volume = 0.5; // Đặt volume mặc định là 50%
+            volumeProgress.style.width = "50%";
+            volumeDot.style.left = "50%";
+        });
+
+        // ---------------------- PAYMENT ----------------------
+        async function fetchDiscordServerInfo(inputUrl) {
+            try {
+                const match = inputUrl.match(/(?:https?:\/\/)?discord\.gg\/([\w\d-]+)/);
+                if (!match) {
+                    console.error("URL không hợp lệ!");
+                    return;
+                }
+                const inviteCode = match[1];
+                const inviteElement = document.querySelector(".discord-invite");
+                if (inviteElement) inviteElement.textContent = `discord.gg/${inviteCode}`;
+                // Nếu có class .discord-invite-click, cho phép click vào link
+                const inviteClickable = document.querySelector(".discord-invite-click");
+                if (inviteClickable) {
+                    inviteClickable.style.cursor = "pointer"; // Đúng giá trị
+                    inviteClickable.addEventListener("click", () => {
+                        window.open(`https://discord.gg/${inviteCode}`, "_blank");
+                    });
+                }
+                const inviteResponse = await fetch(`https://discord.com/api/v9/invites/${inviteCode}?with_counts=true&with_expiration=true`);
+                const inviteData = await inviteResponse.json();
+                if (!inviteData.guild?.id) {
+                    console.error("Không tìm thấy thông tin server!");
+                    return;
+                }
+                document.querySelector(".discord-name").textContent = inviteData.guild.name;
+                document.querySelector(".discord-avatar").src =
+                    `https://cdn.discordapp.com/icons/${inviteData.guild.id}/${inviteData.guild.icon}.png`;
+            } catch (error) {
+                console.error("Lỗi khi lấy thông tin server:", error);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchDiscordServerInfo("https://discord.gg/WffnP4sQ4K");
+            document.querySelectorAll(".show-payment-info").forEach(el => {
+                el.addEventListener("click", showPaymentInfo);
+            });
+        });
+
+        function showPaymentInfo() {
+            const overlay = document.createElement("div");
+            overlay.className = "popup-overlay";
+            overlay.innerHTML = `
+                <div class="popup-content">
+                <div class="close-popup">✖</div>
+                <h2 style="text-align:center; margin-bottom:1rem;">Thông Tin Thanh Toán</h2>
+                <p style="text-align:center; margin-bottom:1.5rem;">Vui lòng chọn hình thức thanh toán</p>
+                <div class="popup-buttons">
+                    <button class="payment-option" data-type="momo">MOMO</button>
+                    <button class="payment-option" data-type="sacombank">SACOMBANK</button>
+                </div>
+                <div class="payment-info" style="display:none; margin-top:1.5rem; text-align:center;">
+                    <h3 style="margin-bottom:0.5rem;">Thông Tin Tài Khoản</h3>
+                    <img class="qr-code" src="None">
+                    <p class="bank-info"></p>
+                    <p class="account-number"></p>
+                    <p class="account-name"></p>
+                </div>
+                </div>
+            `;
+
+            document.body.appendChild(overlay);
+
+            // Hiển thị popup (hiệu ứng fade-in)
+            setTimeout(() => overlay.classList.add("show"), 10);
+
+            // Đóng popup khi bấm nút ✖
+            overlay.querySelector(".close-popup").addEventListener("click", closePopup);
+
+            // Đóng popup khi bấm vào overlay (nhưng không phải popup-content)
+            overlay.addEventListener("click", (event) => {
+                if (event.target === overlay) {
+                    closePopup();
+                }
+            });
+
+            // Hàm đóng popup với hiệu ứng mượt mà
+            function closePopup() {
+                overlay.classList.add("hide"); // Kích hoạt hiệu ứng fade-out
+                setTimeout(() => overlay.remove(), 500); // Xóa sau khi hiệu ứng kết thúc (0.5s)
+            }
+
+            // Xử lý chọn phương thức thanh toán
+            overlay.querySelectorAll(".payment-option").forEach(button => {
+                button.addEventListener("click", function () {
+                    const type = this.getAttribute("data-type");
+                    showAccountInfo(type, overlay);
+                });
+            });
+        }
+
+        function showAccountInfo(type, overlay) {
+            let bank = "", accountNumber = "", accountName = "";
+            if (type === "momo") {
+                bank = "MOMO";
+                accountNumber = "0778653868";
+                accountName = "Nguyễn Tấn Lợi";
+                qrcode = './source/momo.png'
+            } else if (type === "sacombank") {
+                bank = "SACOMBANK";
+                accountNumber = "060293193668";
+                accountName = "Nguyễn Tấn Lợi";
+                qrcode = './source/sacombank.png'
+            }
+            const infoDiv = overlay.querySelector(".payment-info");
+            infoDiv.style.display = "block";
+            infoDiv.querySelector(".qr-code").src = qrcode;
+            infoDiv.querySelector(".bank-info").textContent = `Ngân hàng: ${bank}`;
+            infoDiv.querySelector(".account-number").textContent = `Số tài khoản: ${accountNumber}`;
+            infoDiv.querySelector(".account-name").textContent = `Chủ tài khoản: ${accountName}`;
+        }
+    </script>
+</body>
+
+</html>
