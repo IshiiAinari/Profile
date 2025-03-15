@@ -909,24 +909,22 @@
         let hasPlayed = false;
         let isDraggingProgress = false;
 
-        document.addEventListener("pointermove", function playMusicOnce() {
-            if (!hasPlayed) {
-                hasPlayed = true;
-                audio.play();
-                document.removeEventListener("pointermove", playMusicOnce);
-                console.log('Mở nhạc')
-            }
-        });
-
         document.addEventListener("click", function playMusicOnce() {
             if (!hasPlayed) {
                 hasPlayed = true;
-                audio.play();
+                audio.play().catch(error => console.error("Lỗi phát nhạc:", error));
                 document.removeEventListener("click", playMusicOnce);
-                console.log('Mở nhạc')
             }
         });
 
+        document.addEventListener("touchstart", function playMusicOnce() {
+            if (!hasPlayed) {
+                hasPlayed = true;
+                audio.play().catch(error => console.error("Lỗi phát nhạc:", error));
+                document.removeEventListener("touchstart", playMusicOnce);
+            }
+        });
+        
         function togglePlay() {
             if (audio.paused) {
                 audio.play();
@@ -1002,7 +1000,7 @@
 
         // ---------------------- VOLUME ----------------------
         isDraggingVolume = false
-        
+
         // Hàm tính toán vị trí khi kéo volume
         function updateVolume(event) {
             const rect = volumeBar.getBoundingClientRect();
