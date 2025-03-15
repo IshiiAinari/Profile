@@ -840,7 +840,9 @@
             document.querySelector(".loading-screen").classList.add("fade-out");
         }, 3000);
 
-
+        window.onload = function() {
+            window.focus();
+        };
         // ---------------------- TYPING ----------------------
         class TxtType {
             constructor(el, toRotate, period) {
@@ -911,6 +913,16 @@
                 hasPlayed = true;
                 audio.play();
                 document.removeEventListener("pointermove", playMusicOnce);
+                console.log('Mở nhạc)
+            }
+        });
+
+        ocument.addEventListener("click", function playMusicOnce() {
+            if (!hasPlayed) {
+                hasPlayed = true;
+                audio.play();
+                document.removeEventListener("click", playMusicOnce);
+                console.log('Mở nhạc)
             }
         });
 
